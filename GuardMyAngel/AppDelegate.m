@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "FacebookManager.h"
 
 @implementation AppDelegate
 
@@ -14,10 +15,31 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    DLog(@"%@", launchOptions);
+    
+    UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"VV" message:@"BB" delegate:nil cancelButtonTitle:@"C" otherButtonTitles:@"O", nil];
+    [view show];
+    
     // Override point for customization after application launch.
     return YES;
 }
-							
+
+-(BOOL) handleFacebookUrl:(NSURL *)url
+{
+     return [[FacebookManager sharedFacebookManager].facebook handleOpenURL:url];
+}
+
+-(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return [self handleFacebookUrl:url];
+}
+
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return [self handleFacebookUrl:url];    
+}
+
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     /*
@@ -56,5 +78,11 @@
      See also applicationDidEnterBackground:.
      */
 }
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    DLog(@"notification %@", notification.userInfo);
+}
+
 
 @end

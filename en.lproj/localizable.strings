@@ -1,0 +1,19 @@
+/* 
+  localizable.strings
+  GuardMyAngel
+
+  Created by Mohammad Arouri on 1/29/12.
+  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+*/
+
+"text" = "Data not loaded";
+"fetching" = "Fetching Data...";
+
+
+"twitterAccountNotAvailableTitle" = "Twitter Account";
+"twitterAccountNotAvailableMessage" = "Twitter account is not set, please set your account in the settings";
+"twitterAccountNotAvailableCancelButton" = "Cancel";
+"twitterAccountNotAvailableDoneTitle" = "Ok";
+"tweetMessage" = "Check Gaurd My angle app. its amazing";
+
+"localNotificationActionKey" = "Open";
